@@ -63,7 +63,6 @@ func main() {
 	fmt.Println(20 - 4*3)
 	fmt.Println((20 - 4) * 3)
 
-
 	squareValue := 81.0
 	fmt.Println(math.Sqrt(squareValue))
 
