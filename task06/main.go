@@ -5,15 +5,15 @@ import "fmt"
 func main() {
 
 	age := 28
-	fmt.Print(age)
+	fmt.Println(age)
 	age = age + 1
-	fmt.Print(age)
+	fmt.Println(age)
 
 	height := 170
 	height_in_meters := 1.7
 
-	fmt.Print(height)
-	fmt.Print(height_in_meters)
+	fmt.Println(height)
+	fmt.Println(height_in_meters)
 
 	isStudent := true
 	fmt.Println(isStudent)
