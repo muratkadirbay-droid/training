@@ -38,6 +38,7 @@ func main() {
 	fmt.Println(progressPercent, "%")
 
 	coins := 0
+	fmt.Println(coins)  
 
 	coins += 500
 	fmt.Println(coins)
