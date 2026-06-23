@@ -1,27 +1,28 @@
 package main
 
-import (
-	"fmt"
-	"math"
-)
+import "fmt"
 
-type Circle struct {
-	Radius float64
+type Car struct {
+	Brand string
+	Speed int
 }
 
-func calc(c Circle) {
-	area := math.Pi * c.Radius * c.Radius
-	circ := 2 * math.Pi * c.Radius
-
-	fmt.Println("Area:", area)
-	fmt.Println("Circumference:", circ)
+func CheckSpeed(car Car) string {
+	if car.Speed > 100 {
+		return "Слишком быстро"
+	} else if car.Speed >= 60 && car.Speed <= 100 {
+		return "Нормальная скорость"
+	} else {
+		return "Медленно"
+	}
 }
 
 func main() {
-	c := Circle{Radius: 5}
+	car1 := Car{"Toyota", 120}
+	car2 := Car{"BMW", 80}
+	car3 := Car{"Lada", 40}
 
-	calc(c)
-
-	c.Radius = 10
-	calc(c)
+	fmt.Printf("Машина %s: %s\n", car1.Brand, CheckSpeed(car1))
+	fmt.Printf("Машина %s: %s\n", car2.Brand, CheckSpeed(car2))
+	fmt.Printf("Машина %s: %s\n", car3.Brand, CheckSpeed(car3))
 }
