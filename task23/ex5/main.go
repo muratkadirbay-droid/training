@@ -5,20 +5,19 @@ import (
 	"sync"
 )
 
-func count(id int, wg *sync.WaitGroup) {
+func calculateSquare(num int, wg *sync.WaitGroup) {
 	defer wg.Done()
-
-	for i := 1; i <= 3; i++ {
-		fmt.Printf("Горутина %d: %d\n", id, i)
-	}
+	fmt.Println(num * num)
 }
 
 func main() {
+	numbers := []int{2, 4, 6, 8}
+
 	var wg sync.WaitGroup
 
-	for i := 1; i <= 5; i++ {
+	for _, num := range numbers {
 		wg.Add(1)
-		go count(i, &wg)
+		go calculateSquare(num, &wg)
 	}
 
 	wg.Wait()
