@@ -17,10 +17,14 @@ func main() {
 
 	same := true
 
-	for k, v := range defaultConfig {
-		if currentConfig[k] != v {
-			same = false
-			break
+	if len(defaultConfig) != len(currentConfig) {
+		same = false
+	} else {
+		for k, v := range defaultConfig {
+			if currentConfig[k] != v {
+				same = false
+				break
+			}
 		}
 	}
 
@@ -30,14 +34,18 @@ func main() {
 		fmt.Println("Конфигурации отличаются")
 	}
 
-	// изменение mode
 	currentConfig["mode"] = "debug"
 
 	same = true
-	for k, v := range defaultConfig {
-		if currentConfig[k] != v {
-			same = false
-			break
+
+	if len(defaultConfig) != len(currentConfig) {
+		same = false
+	} else {
+		for k, v := range defaultConfig {
+			if currentConfig[k] != v {
+				same = false
+				break
+			}
 		}
 	}
 
