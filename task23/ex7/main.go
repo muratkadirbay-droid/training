@@ -23,10 +23,13 @@ func main() {
 	fmt.Print("Введите категорию: ")
 	fmt.Scan(&category)
 
-	delays := []time.Duration{
-		500 * time.Millisecond,
-		1 * time.Second,
-		200 * time.Millisecond,
+	delays := make([]time.Duration, 3)
+
+	for i := 0; i < 3; i++ {
+		var seconds int
+		fmt.Printf("Введите задержку для процесса %d (в секундах): ", i+1)
+		fmt.Scan(&seconds)
+		delays[i] = time.Duration(seconds) * time.Second
 	}
 
 	for i := 1; i <= 3; i++ {
